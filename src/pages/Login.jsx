@@ -1,78 +1,89 @@
 import logo from "src/assets/logo.png";
 import image2 from "src/assets/image2.png";
+import styled from "styled-components";
+import { Button, Card, CardBody, Input, Heading, Paragraph } from "src/components/neubruatalist/neubratalist";
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: white;
+  border: 4px solid black;
+  border-radius: 0.5rem;
+  box-shadow: 8px 8px 0 black;
+  overflow: hidden;
+  max-width: 960px;
+`;
+
+const LeftSide = styled.div`
+  background: linear-gradient(to bottom right, var(--color-main), #e0f0ff);
+  clip-path: polygon(0 0, 100% 0, 90% 50%, 100% 100%, 0 100%);
+  padding: 2.5rem;
+  color: white;
+  font-family: monospace;
+`;
+
+const RightSide = styled.div`
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Logo = styled.img`
+  height: 80px;
+  width: 80px;
+`;
 
 export default function Login() {
     return (
         <div className="w-screen h-screen bg-gradient-to-br from-main to-accent flex items-center justify-center">
-            <div
-                className="grid grid-cols-2 bg-white drop-shadow-2xl/50  rounded-4xl overflow-hidden max-w-4xl">
-
-                {/* Left Side Image */}
-                <div className="bg-gradient-to-br from-main to-[#e0f0ff] clip-inward-right p-10 text-white">
-                    <h1 className="text-4xl font-bold leading-snug text-accent">
-                        Stay <span className="text-white">Ahead</span> of Threats.<br/>
-                        <span className="text-white">Track</span> Phishing in <span
-                        className="text-white">Real</span> Time.
-                    </h1>
+            <Grid>
+                {/* Left Side */}
+                <LeftSide>
+                    <Heading style={{ color: "#084268" }}>
+                        Stay <span style={{ color: "white" }}>Ahead</span> of Threats.
+                    </Heading>
+                    <Paragraph style={{ color: "white", marginBottom: "1rem" }}>
+                        <strong>Track</strong> Phishing in <strong>Real</strong> Time.
+                    </Paragraph>
                     <div className="flex justify-center">
-                        <img
-                            className="h-65 w-65"
-                            src={image2}
-                            alt="Logo"
-                        />
+                        <img className="h-65 w-65" src={image2} alt="Illustration" />
                     </div>
-                </div>
+                </LeftSide>
 
-                {/* Right Side Form */}
-                <div className="flex items-center justify-center p-6 bg-white rounded-md">
+                {/* Right Side */}
+                <RightSide>
                     <form className="w-full max-w-sm space-y-4">
-
-                        {/* Logo */}
-                        <div className="flex justify-center">
-                            <img
-                                className="h-45 w-45"
-                                src={logo}
-                                alt="Logo"
-                            />
+                        <div className="flex justify-center mb-4">
+                            <Logo src={logo} alt="Logo" />
                         </div>
 
                         <div>
-                            <label className="block mb-1 text-sm font-medium">Username</label>
-                            <input
-
-                                type="text"
-                                placeholder="Enter your username"
-                                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary-400"
-                            />
+                            <label className="block mb-1 text-sm font-mono">Username</label>
+                            <Input type="text" placeholder="Enter your username" />
                         </div>
 
                         <div>
-                            <label className="block mb-1 text-sm font-medium">Password</label>
-                            <input
-                                type="password"
-                                placeholder="Enter your password"
-                                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary-400"
-                            />
+                            <label className="block mb-1 text-sm font-mono">Password</label>
+                            <Input type="password" placeholder="Enter your password" />
                         </div>
 
-                        {/* Checkbox */}
-                        <label className="flex items-center space-x-2 text-sm text-gray-600">
-                            <input type="checkbox" className="form-checkbox"/>
-                            <span>Forget password?</span>
+                        <label className="flex items-center space-x-2 text-sm font-mono">
+                            <input type="checkbox" className="accent-black" />
+                            <span>Remember me</span>
                         </label>
 
-                        {/* Gradient Button */}
-                        <button
-                            type="submit"
-                            className="w-full py-2 bg-gradient-to-r from-main to-secondary text-white rounded-md hover:from-main hover:to-secondary transition-all"
+                        <Button type="submit">Login</Button>
+
+                        <a
+                            href="#"
+                            className="text-gray-600 font-mono text-sm text-center block hover:underline"
                         >
-                            Login
-                        </button>
-                        <a className='text-[#6E6E6E] flex items-center justify-center'>Forget Password ?</a>
+                            Forgot Password?
+                        </a>
                     </form>
-                </div>
-            </div>
+                </RightSide>
+            </Grid>
         </div>
     );
 }
-

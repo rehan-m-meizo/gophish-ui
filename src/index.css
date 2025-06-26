@@ -36,6 +36,26 @@ body {
     --color-secondary-800: #035689;
     --color-secondary-900: #084268;
     --color-secondary-950: #062d4b;
+
+    --shadow-brutal: 4px 4px 0 #0d5e97;
+    --shadow-brutal-lg: 6px 6px 0 #0d5e97;
+
+    --shadow-default: 2px 2px 0 #0d5e97;
+    --shadow-default-lg: 4px 4px 0 #0d5e97;
+
+    --shadow-destructive: 2px 2px 0 #b91c1c;
+    --shadow-destructive-lg: 4px 4px 0 #b91c1c;
+
+    --shadow-outline: 2px 2px 0 #0d5e97;
+    --shadow-outline-lg: 4px 4px 0 #0d5e97;
+
+    --shadow-secondary: 2px 2px 0 #0d5e97;
+    --shadow-secondary-lg: 4px 4px 0 #0d5e97;
+
+    --shadow-ghost: 2px 2px 0 #0d5e97;
+    --shadow-ghost-lg: 4px 4px 0 #0d5e97;
+
+    --radius-brutal: 0.375rem;
 }
 
 .clip-inward-right {
@@ -46,4 +66,30 @@ body {
             100% 100%,
             0 100%
     );
+}
+
+
+.chart-container {
+    background-color: white;
+    padding: 1rem;
+    font-family: monospace;
+}
+
+/* Optional: make Recharts area/line chart look solid */
+.chart-container .recharts-surface {
+    background-color: white !important;
+}
+
+.chart-container .recharts-layer path {
+    fill-opacity: 1 !important;
+    stroke-width: 2;
+    stroke: black;
+}
+
+.chart-container text {
+    fill: black;
+}
+
+.chart-container .recharts-cartesian-grid line {
+    stroke: #808080;
 }
